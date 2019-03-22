@@ -34,7 +34,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_Consultar_Scripts):
          ftp = ftplib.FTP(tftp_server,user,password)
         except OSError:
             self.errorMessage.setWindowTitle("ERROR")
-            self.errorMessage.showMessage("SE REQUIERE CONEXION A LA VPN TSO")     
+            self.errorMessage.showMessage("SE REQUIERE CONEXION A LA VPN TSO")
         else:
             serials=self.serialNumber.toPlainText().split()
             self.assignedScripts.setRowCount(len(serials))
