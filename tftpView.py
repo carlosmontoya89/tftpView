@@ -20,9 +20,11 @@ class MainWindow(QtWidgets.QMainWindow, Ui_Consultar_Scripts):
             self.resultDict[filename[0:12]]="NO TIENE SCRIPT ASIGNADO"
         try:
             with open(directory+"/"+filename) as f:
-                for line in f:
-                    line=line.split()
-                    self.resultDict[filename[0:12]]=line[len(line)-1]
+                line=f.readline()
+                line=line.split()
+                print(line)
+                self.resultDict[filename[0:12]]=line[len(line)-1]
+                print(self.resultDict)
         except Exception:
             print()
 

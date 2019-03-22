@@ -7,7 +7,7 @@
 # WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-import os
+import os, sys
 
 def resource_path(relative_path):
   if hasattr(sys, '_MEIPASS'):
