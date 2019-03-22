@@ -7,8 +7,7 @@
 # WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-import os, sys
-
+import os
 
 def resource_path(relative_path):
   if hasattr(sys, '_MEIPASS'):
@@ -63,7 +62,6 @@ class Ui_Consultar_Scripts(object):
         self.statusBar = QtWidgets.QStatusBar(Consultar_Scripts)
         self.statusBar.setObjectName("statusBar")
         Consultar_Scripts.setStatusBar(self.statusBar)
-
         self.retranslateUi(Consultar_Scripts)
         QtCore.QMetaObject.connectSlotsByName(Consultar_Scripts)
 
