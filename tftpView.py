@@ -21,10 +21,8 @@ class MainWindow(QtWidgets.QMainWindow, Ui_Consultar_Scripts):
         try:
             with open(directory+"/"+filename) as f:
                 line=f.readline()
-                line=line.split()
-                print(line)
-                self.resultDict[filename[0:12]]=line[len(line)-1]
-                print(self.resultDict)
+                line=line.split()                
+                self.resultDict[filename[0:12]]=line[len(line)-1]                
         except Exception:
             print()
 
@@ -33,7 +31,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_Consultar_Scripts):
         user=settings.FTP_USER
         password=settings.FTP_PWD
         try:
-         ftp = ftplib.FTP(tftp_server,user,password)
+            ftp = ftplib.FTP(tftp_server,user,password)
         except OSError:
             self.errorMessage.setWindowTitle("ERROR")
             self.errorMessage.showMessage("SE REQUIERE CONEXION A LA VPN TSO")
@@ -50,7 +48,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_Consultar_Scripts):
                     self.getFile(ftp,serial,tmpdir.name)
                 else:
                     self.resultDict[serial]="NO ES UN SERIAL VALIDO"
-            i=0
+            i=0            
             for key,value in self.resultDict.items():
                 self.assignedScripts.setItem(i,0, QtWidgets.QTableWidgetItem(key))
                 self.assignedScripts.setItem(i,1, QtWidgets.QTableWidgetItem(value))
